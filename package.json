@@ -5,13 +5,18 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "web:start": "react-scripts start",
+    "web:build": "react-scripts build",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "react": "17.0.2",
-    "react-native": "npm:react-native-tvos@0.66.3-3"
+    "react-dom": "^17.0.2",
+    "react-native": "npm:react-native-tvos@0.66.3-3",
+    "react-native-web": "^0.17.7",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -25,5 +30,17 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
