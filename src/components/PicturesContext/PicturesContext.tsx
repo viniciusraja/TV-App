@@ -1,3 +1,4 @@
+import {toJS} from 'mobx';
 import {useLocalObservable} from 'mobx-react-lite';
 import React, {createContext, useContext, FC} from 'react';
 import {createPicturesStore, PictureStoreType} from 'src/stores/PictureStores';
@@ -14,6 +15,6 @@ const PicturesProvider: FC = ({children}) => {
   );
 };
 
-export const usePicturesStore = () => useContext(PicturesContext);
+export const usePicturesStore = () => toJS(useContext(PicturesContext));
 
 export default PicturesProvider;
