@@ -10,6 +10,7 @@
       "moduleResolution": "node",
       "noEmit": true,
       "strict": true,
+      "experimentalDecorators": true,
       "target": "esnext",
       "baseUrl": "./",                        /* Base directory to resolve non-absolute module names. */
       "paths": {
