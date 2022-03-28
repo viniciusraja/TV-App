@@ -1,6 +1,8 @@
 import React from 'react';
 import PicturesTypesList from '../PicturesTypesList';
 import {usePicturesStore} from '../PicturesContext/PicturesContext';
+import styles from './styles';
+import {View} from 'react-native';
 
 const HomePage = () => {
   const picturesStore = usePicturesStore();
@@ -12,7 +14,11 @@ const HomePage = () => {
     ),
   }));
 
-  return <PicturesTypesList categories={categoriesWithPictures} />;
+  return (
+    <View style={styles.homePageContainer}>
+      <PicturesTypesList categories={categoriesWithPictures} />
+    </View>
+  );
 };
 
 export default HomePage;

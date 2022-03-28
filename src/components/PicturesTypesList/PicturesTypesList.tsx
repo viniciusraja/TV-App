@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 
-import {FlatList, View} from 'react-native';
-import PictureDetails from '../PictureDetails';
+import {FlatList} from 'react-native';
+import Header from '../Header';
 import Pictures from '../Pictures/Pictures';
 import styles from './styles';
 
@@ -14,11 +14,13 @@ const PicturesTypesList = ({categories = []}: PicturesProps) => {
     ({item}) => <Pictures pictures={item.pictures} title={item.category} />,
     [],
   );
+  const renderHeader = () => <Header />;
 
   return (
     <FlatList
       style={styles.pictureListContainer}
       data={categories}
+      ListHeaderComponent={renderHeader}
       keyExtractor={item => item.category}
       renderItem={renderItem}
     />
