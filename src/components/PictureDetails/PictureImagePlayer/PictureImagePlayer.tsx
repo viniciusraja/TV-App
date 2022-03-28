@@ -1,4 +1,4 @@
-import {View, ImageBackground, TouchableHighlight, Image} from 'react-native';
+import {View, ImageBackground, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import PlayButton from 'src/assets/images/play-button.png';
@@ -8,7 +8,7 @@ type PictureImagePlayerProps = {
 };
 const PictureImagePlayer = ({src}: PictureImagePlayerProps) => {
   return (
-    <TouchableHighlight>
+    <TouchableOpacity>
       <ImageBackground
         source={{uri: src}}
         borderRadius={20}
@@ -21,7 +21,7 @@ const PictureImagePlayer = ({src}: PictureImagePlayerProps) => {
           source={PlayButton}
         />
       </ImageBackground>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
