@@ -9,13 +9,12 @@ type StyleProps = {
 const styles = ({isFocused}: StyleProps) =>
   StyleSheet.create({
     cardContainer: {
-      aspectRatio: 0.5,
+      aspectRatio: 0.7,
       borderWidth: isFocused ? 3 : 0,
       borderColor: colors.white,
-      borderRadius: 43,
+      borderRadius: 23,
       overflow: 'hidden',
       width: DeviceUiInfo.scale(50),
-      backgroundColor: 'purple',
     },
   });
 

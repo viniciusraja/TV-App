@@ -30,7 +30,7 @@ const PictureCard = observer(({src, id}: PictureCardProps) => {
   return (
     <TouchableHighlight onFocus={handleFocus}>
       <ImageBackground
-        borderRadius={40}
+        borderRadius={20}
         source={{
           uri:
             src ||
