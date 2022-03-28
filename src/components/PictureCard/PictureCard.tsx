@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
 
 import {ImageBackground, TouchableHighlight} from 'react-native';
@@ -19,9 +19,11 @@ const PictureCard = observer(({src, id}: PictureCardProps) => {
 
   const handleFocus = () => setFocusedPicture?.(id);
 
-  const handleSelection = () => {
-    setSelectedPicture?.(id);
-  };
+  const handleSelection = () => setSelectedPicture?.(id);
+
+  const handleBlur = () => setSelectedPicture?.('');
+
+  useEffect(handleBlur, [focusedPictureId]);
 
   return (
     <TouchableHighlight onFocus={handleFocus} onPress={handleSelection}>
