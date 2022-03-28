@@ -1,8 +1,8 @@
 import DeviceUiInfo from 'src/config/device';
 
 const fontSize = {
-  medium: DeviceUiInfo.moderateScale(54),
-  large: DeviceUiInfo.moderateScale(40),
+  medium: DeviceUiInfo.moderateScale(16),
+  large: DeviceUiInfo.moderateScale(20),
 } as const;
 
 const fontFamily = {

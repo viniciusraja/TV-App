@@ -1,3 +1,4 @@
+import {StyleSheet} from 'react-native';
 import colors, {ColorName} from 'src/theme/colors';
 import fonts, {FontsFamilies} from 'src/theme/fonts';
 
@@ -5,6 +6,7 @@ type JWTextStyles = {
   fontFamily: FontsFamilies;
   color?: ColorName;
   type: 'header' | 'body-medium';
+  style: {};
 };
 
 const FONT_TYPES = {
@@ -20,12 +22,14 @@ const FONT_TYPES = {
   },
 };
 
-const styles = ({fontFamily, type, color}: JWTextStyles) => ({
-  text: {
-    ...FONT_TYPES[type],
-    fontFamily: fonts.fontFamily[fontFamily],
-    color: color ? colors[color] : undefined,
-  },
-});
+const styles = ({fontFamily, type, color, style}: JWTextStyles) =>
+  StyleSheet.create({
+    text: {
+      ...FONT_TYPES[type],
+      fontFamily: fonts.fontFamily[fontFamily],
+      color: color ? colors[color] : undefined,
+      ...style,
+    },
+  });
 
 export default styles;

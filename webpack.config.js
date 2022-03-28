@@ -49,6 +49,12 @@ const imageLoaderConfiguration = {
   },
 };
 
+const ttfLoaderConfiguration = {
+  test: /\.ttf$/,
+  loader: 'url-loader',
+  include: [path.resolve(appDirectory, './src/assets/fonts')],
+};
+
 module.exports = {
   entry: {
     app: path.join(__dirname, 'index.web.js'),
@@ -68,6 +74,7 @@ module.exports = {
     rules: [
       babelLoaderConfiguration,
       imageLoaderConfiguration,
+      ttfLoaderConfiguration,
       svgLoaderConfiguration,
     ],
   },

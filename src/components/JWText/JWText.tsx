@@ -20,12 +20,9 @@ const JWText: React.FC<JWTextProps> = ({
   style = {},
   ...props
 }) => {
-  const JWStyles = Styles({fontFamily: font, type, color});
+  const JWStyles = Styles({fontFamily: font, type, color, style});
   return (
-    <Text
-      style={{...style, ...JWStyles.text}}
-      accessibilityRole="text"
-      {...props}>
+    <Text style={JWStyles.text} accessibilityRole="text" {...props}>
       {children}
     </Text>
   );
