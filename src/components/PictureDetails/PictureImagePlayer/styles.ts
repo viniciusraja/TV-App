@@ -4,7 +4,7 @@ import colors from 'src/theme/colors';
 
 const styles = StyleSheet.create({
   imageContainer: {
-    height: DeviceUiInfo.verticalScale(250),
+    flex: 1,
     width: DeviceUiInfo.scale(120),
     borderRadius: 20,
     overflow: 'hidden',

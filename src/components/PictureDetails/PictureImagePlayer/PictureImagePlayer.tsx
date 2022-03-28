@@ -12,6 +12,7 @@ const PictureImagePlayer = ({src}: PictureImagePlayerProps) => {
       <ImageBackground
         source={{uri: src}}
         borderRadius={20}
+        resizeMode="cover"
         style={styles.imageContainer}>
         <View style={styles.backdrop} />
         <Image

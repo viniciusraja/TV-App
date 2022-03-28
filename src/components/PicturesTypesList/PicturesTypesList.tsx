@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
 
 import {FlatList, View} from 'react-native';
+import PictureDetails from '../PictureDetails';
 import Pictures from '../Pictures/Pictures';
 import styles from './styles';
 
@@ -13,12 +14,6 @@ const PicturesTypesList = ({categories = []}: PicturesProps) => {
     ({item}) => <Pictures pictures={item.pictures} title={item.category} />,
     [],
   );
-  const renderItemSeparator = useCallback(
-    () => <View style={styles.itemSeparator} />,
-    [],
-  );
-
-  console.log(categories);
 
   return (
     <FlatList
@@ -26,7 +21,6 @@ const PicturesTypesList = ({categories = []}: PicturesProps) => {
       data={categories}
       keyExtractor={item => item.category}
       renderItem={renderItem}
-      ItemSeparatorComponent={renderItemSeparator}
     />
   );
 };

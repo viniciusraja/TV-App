@@ -1,13 +1,13 @@
-import colors from 'src/theme/colors';
-
 const styles = {
   header: {
-    textTransform: 'capitalize' as const,
+    textTransform: 'capitalize',
+    marginVertical: 20,
   },
+
   pictureListContainer: {},
   itemSeparator: {
-    width: 50,
+    width: 30,
   },
-};
+} as const;
 
 export default styles;

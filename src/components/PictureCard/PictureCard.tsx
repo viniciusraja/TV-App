@@ -1,17 +1,7 @@
-import {observable} from 'mobx';
-import React, {useContext, useState} from 'react';
+import React from 'react';
 import {observer} from 'mobx-react-lite';
 
-import {
-  StyleSheet,
-  ImageBackground,
-  Text,
-  TouchableHighlight,
-} from 'react-native';
-import DeviceUiInfo from 'src/config/device';
-import {PictureStoreContext} from 'src/stores/PictureStores';
-import colors from 'src/theme/colors';
-import JWText from '../JWText';
+import {ImageBackground, TouchableHighlight} from 'react-native';
 import styles from './styles';
 import {usePicturesStore} from '../PicturesContext/PicturesContext';
 
@@ -22,13 +12,19 @@ type PictureCardProps = {
 
 const PictureCard = observer(({src, id}: PictureCardProps) => {
   const picturesStore = usePicturesStore();
-  const {focusedPictureId, setFocusedPicture} = picturesStore || {};
+  const {focusedPictureId, setFocusedPicture, setSelectedPicture} =
+    picturesStore || {};
   const isFocused = focusedPictureId === id;
   const style = styles({isFocused});
+
   const handleFocus = () => setFocusedPicture?.(id);
 
+  const handleSelection = () => {
+    setSelectedPicture?.(id);
+  };
+
   return (
-    <TouchableHighlight onFocus={handleFocus}>
+    <TouchableHighlight onFocus={handleFocus} onPress={handleSelection}>
       <ImageBackground
         borderRadius={20}
         source={{

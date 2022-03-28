@@ -1,8 +1,9 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback} from 'react';
 
 import {FlatList, View} from 'react-native';
 import JWText from '../JWText';
 import PictureCard from '../PictureCard';
+import PictureDetails from '../PictureDetails';
 import styles from './styles';
 
 type PicturesProps = {
@@ -23,6 +24,7 @@ const Pictures = ({pictures, title}: PicturesProps) => {
 
   return (
     <>
+      <PictureDetails section={title} />
       <JWText type="header" style={styles.header}>
         {title}
       </JWText>
