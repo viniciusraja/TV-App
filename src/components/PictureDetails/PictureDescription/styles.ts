@@ -18,6 +18,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 10,
   },
+  divider: {
+    width: 1,
+    height: '100%',
+    backgroundColor: colors.white,
+    marginHorizontal: 70,
+  },
+  descriptionContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  platformLogo: {
+    height: 100,
+    aspectRatio: 1,
+    borderRadius: 50,
+    overflow: 'hidden',
+    borderColor: colors.white,
+    borderWidth: 1,
+  },
   description: {
     flexWrap: 'wrap',
     flexShrink: 1,

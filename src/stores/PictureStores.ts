@@ -11,6 +11,7 @@ export type Picture = {
   Plot: string;
   Poster: string;
   imdbRating: string;
+  platformLogo: string;
   imdbID: string;
   Type: string;
   Images: string[];

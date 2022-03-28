@@ -1,4 +1,4 @@
-import {View, FlatList} from 'react-native';
+import {View, FlatList, Image} from 'react-native';
 import React from 'react';
 import {Picture} from 'src/stores/PictureStores';
 import JWText from 'src/components/JWText';
@@ -11,8 +11,16 @@ type PictureDescriptionProps = {
 };
 
 const PictureDescription = ({selectedPicture}: PictureDescriptionProps) => {
-  const {Plot, Genre, Title, Runtime, Released, Rated, imdbRating} =
-    selectedPicture;
+  const {
+    Plot,
+    Genre,
+    Title,
+    Runtime,
+    Released,
+    Rated,
+    imdbRating,
+    platformLogo,
+  } = selectedPicture;
 
   const renderItem = ({item}: {item: string}) => <JWText>{item}</JWText>;
 
@@ -30,7 +38,15 @@ const PictureDescription = ({selectedPicture}: PictureDescriptionProps) => {
         releaseDate={Released}
         rated={Rated}
       />
-      <JWText style={styles.description}>{Plot || ''}</JWText>
+      <View style={styles.descriptionContainer}>
+        <JWText style={styles.description}>{Plot || ''}</JWText>
+        <View style={styles.divider} />
+        <Image
+          source={{uri: platformLogo}}
+          resizeMode="cover"
+          style={styles.platformLogo}
+        />
+      </View>
       <FlatList
         horizontal
         data={Genre?.split(',') || []}
