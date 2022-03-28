@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "web:start": "webpack serve --mode=development --config webpack.config.js",
     "web:build": "rm -rf dist/ && webpack --mode=production --config webpack.config.js",
+    "tvos": "react-native run-ios  --simulator 'Apple TV' --scheme 'MyTvApp-tvOS'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
